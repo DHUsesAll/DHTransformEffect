@@ -14,6 +14,8 @@
 		E515609E1BCFCD2600576EDF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E515609D1BCFCD2600576EDF /* Images.xcassets */; };
 		E51560A11BCFCD2600576EDF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E515609F1BCFCD2600576EDF /* LaunchScreen.xib */; };
 		E51560AD1BCFCD2600576EDF /* _DControllingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E51560AC1BCFCD2600576EDF /* _DControllingTests.m */; };
+		E51560B91BCFD34500576EDF /* DHVector.m in Sources */ = {isa = PBXBuildFile; fileRef = E51560B81BCFD34500576EDF /* DHVector.m */; };
+		E51560BB1BCFED3700576EDF /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E51560BA1BCFED3700576EDF /* 1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		E51560A61BCFCD2600576EDF /* 3DControllingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3DControllingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51560AB1BCFCD2600576EDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E51560AC1BCFCD2600576EDF /* _DControllingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _DControllingTests.m; sourceTree = "<group>"; };
+		E51560B71BCFD34500576EDF /* DHVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHVector.h; sourceTree = "<group>"; };
+		E51560B81BCFD34500576EDF /* DHVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHVector.m; sourceTree = "<group>"; };
+		E51560BA1BCFED3700576EDF /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 		E515608F1BCFCD2600576EDF /* 3DControlling */ = {
 			isa = PBXGroup;
 			children = (
+				E51560B61BCFD34500576EDF /* DHVector */,
 				E51560941BCFCD2600576EDF /* AppDelegate.h */,
 				E51560951BCFCD2600576EDF /* AppDelegate.m */,
 				E51560971BCFCD2600576EDF /* ViewController.h */,
@@ -117,6 +123,16 @@
 				E51560AB1BCFCD2600576EDF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E51560B61BCFD34500576EDF /* DHVector */ = {
+			isa = PBXGroup;
+			children = (
+				E51560BA1BCFED3700576EDF /* 1.jpg */,
+				E51560B71BCFD34500576EDF /* DHVector.h */,
+				E51560B81BCFD34500576EDF /* DHVector.m */,
+			);
+			path = DHVector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E51560BB1BCFED3700576EDF /* 1.jpg in Resources */,
 				E515609C1BCFCD2600576EDF /* Main.storyboard in Resources */,
 				E51560A11BCFCD2600576EDF /* LaunchScreen.xib in Resources */,
 				E515609E1BCFCD2600576EDF /* Images.xcassets in Resources */,
@@ -219,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E51560B91BCFD34500576EDF /* DHVector.m in Sources */,
 				E51560991BCFCD2600576EDF /* ViewController.m in Sources */,
 				E51560961BCFCD2600576EDF /* AppDelegate.m in Sources */,
 				E51560931BCFCD2600576EDF /* main.m in Sources */,
