@@ -7,8 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "DHVector.h"
-#import "MyView.h"
 #import "UIView+DHTransform3D.h"
 
 @interface ViewController ()
