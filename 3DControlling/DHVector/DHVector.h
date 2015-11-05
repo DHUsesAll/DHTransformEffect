@@ -10,23 +10,12 @@
 // 用UIKit坐标的时候需要做一次转换
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-typedef enum VectorQuadrant
-{
-    
-    VectorQuadrantFirst,
-    VectorQuadrantSecond,
-    VectorQuadrantThird,
-    VectorQuadrantFourth,
-    VectorQuadrantAxis
-    
-} VectorQuadrant;
 
 // 平面向量
 @interface DHVector : NSObject
 
 @property (nonatomic,readonly) CGPoint startPoint;
 @property (nonatomic,readonly) CGPoint endPoint;
-@property (nonatomic,readonly) VectorQuadrant quadrant; // 所在象限
 
 // 用两个点初始化一个向量
 - (instancetype)initWithStartPoint:(CGPoint)start endPoint:(CGPoint)end;

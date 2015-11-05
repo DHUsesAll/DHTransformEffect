@@ -11,6 +11,7 @@
 #define UNIT_LENGTH 10
 @implementation DHVector
 
+// 已弃用
 - (instancetype)initAsUnitVectorWithStartPoint:(CGPoint)start endPoint:(CGPoint)end
 {
     self = [self initWithStartPoint:start endPoint:end];
@@ -37,23 +38,6 @@
     self = [super init];
     _startPoint = start;
     _endPoint = end;
-    
-    CGPoint p = [self coordinateExpression];
-    if (p.x != 0 && p.y != 0) {
-        
-        if (p.x >0 && p.y > 0) {
-            _quadrant = VectorQuadrantFirst;
-        } else if (p.x > 0 && p.y < 0) {
-            _quadrant = VectorQuadrantSecond;
-        } else if (p.x < 0 && p.y < 0) {
-            _quadrant = VectorQuadrantThird;
-        } else if (p.x < 0 && p.y > 0) {
-            _quadrant = VectorQuadrantFourth;
-        }
-    } else {
-        _quadrant = VectorQuadrantAxis;
-    }
-    
     return self;
 }
 
@@ -296,25 +280,25 @@ CGFloat radianFromDegree(CGFloat degree)
 
 + (DHVector *)xPositiveUnitVector
 {
-    DHVector * vector = [[DHVector alloc] initAsUnitVectorWithStartPoint:CGPointMake(0, 0) endPoint:CGPointMake(UNIT_LENGTH, 0)];
+    DHVector * vector = [[DHVector alloc] initWithStartPoint:CGPointMake(0, 0) endPoint:CGPointMake(UNIT_LENGTH, 0)];
     return vector;
 }
 
 + (DHVector *)xNegativeUnitVector
 {
-    DHVector * vector = [[DHVector alloc] initAsUnitVectorWithStartPoint:CGPointMake(0, 0) endPoint:CGPointMake(-UNIT_LENGTH, 0)];
+    DHVector * vector = [[DHVector alloc] initWithStartPoint:CGPointMake(0, 0) endPoint:CGPointMake(-UNIT_LENGTH, 0)];
     return vector;
 }
 
 + (DHVector *)yPositiveUnitVector
 {
-    DHVector * vector = [[DHVector alloc] initAsUnitVectorWithStartPoint:CGPointMake(0, 0) endPoint:CGPointMake(0, UNIT_LENGTH)];
+    DHVector * vector = [[DHVector alloc] initWithStartPoint:CGPointMake(0, 0) endPoint:CGPointMake(0, UNIT_LENGTH)];
     return vector;
 }
 
 + (DHVector *)yNegativeUnitVector
 {
-    DHVector * vector = [[DHVector alloc] initAsUnitVectorWithStartPoint:CGPointMake(0, 0) endPoint:CGPointMake(0, -UNIT_LENGTH)];
+    DHVector * vector = [[DHVector alloc] initWithStartPoint:CGPointMake(0, 0) endPoint:CGPointMake(0, -UNIT_LENGTH)];
     return vector;
 }
 

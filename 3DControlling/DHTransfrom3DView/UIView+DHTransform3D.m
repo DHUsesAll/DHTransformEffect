@@ -60,11 +60,11 @@ static const void * transformUnitKey = &transformUnitKey;
     // 通过这个位移生成一个向量。
     DHVector * vector = [[DHVector alloc] initWithCoordinateExpression:panTransition];
     
-    // 把这个向量保存起来，下次调用这个方法的时候需要拿到这次的向量，用来做减法
-    [self setLastTransition:vector];
-    
     // 用当前的位移向量-上次的位移向量得到我们手指的位移偏移量
     DHVector * translateVector = [DHVector aVector:vector substractedByOtherVector:[self lastTransition]];
+    
+    // 把这个向量保存起来，下次调用这个方法的时候需要拿到这次的向量，用来做减法
+    [self setLastTransition:vector];
     
     // 随便计算一下单位旋转角度，也就是每次调用这个方法的时候应该旋转多少度
     
