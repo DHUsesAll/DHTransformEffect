@@ -33,7 +33,7 @@
         
     } else if (sender.state == UIGestureRecognizerStateChanged) {
         
-        [self.transformView setTransform3DWithPanTransition:[sender translationInView:sender.view]];
+        [self.transformView setTransform3DWithPanTranslation:[sender translationInView:sender.view]];
         
     } else if (sender.state == UIGestureRecognizerStateCancelled || sender.state == UIGestureRecognizerStateEnded) {
         

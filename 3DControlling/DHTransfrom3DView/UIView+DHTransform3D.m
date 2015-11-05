@@ -50,15 +50,15 @@ static const void * transformUnitKey = &transformUnitKey;
     self.layer.transform = transform;
 }
 
-- (void)setTransform3DWithPanTransition:(CGPoint)panTransition
+- (void)setTransform3DWithPanTranslation:(CGPoint)panTranslation
 {
     // 我们要的向量是手指上次所在的点到这次所在的点连成的一个向量，这是你这次手指滑动的方向，传给transform3DRotate函数的向量是垂直于这个向量的向量。而我们已知的只有这个transition，也就是手指最开始的点到手指当前点连成的一个向量（也就是手指的位移，只考虑起始点和结束点）。
     // 画出图来就发现，我们要的向量就是当前向量-上一次手指的位移向量（向量减法）
     // 因为UIKit的坐标系正方向向下，我们向量计算的坐标系正方向向上，所以要做一次简单的转换，转换到坐标系正方向向上
-    panTransition.y = -panTransition.y;
+    panTranslation.y = -panTranslation.y;
     
     // 通过这个位移生成一个向量。
-    DHVector * vector = [[DHVector alloc] initWithCoordinateExpression:panTransition];
+    DHVector * vector = [[DHVector alloc] initWithCoordinateExpression:panTranslation];
     
     // 用当前的位移向量-上次的位移向量得到我们手指的位移偏移量
     DHVector * translateVector = [DHVector aVector:vector substractedByOtherVector:[self lastTransition]];

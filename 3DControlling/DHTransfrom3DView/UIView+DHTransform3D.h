@@ -23,7 +23,7 @@
  *
  *  @param panTransition pan手势的transition
  */
-- (void)setTransform3DWithPanTransition:(CGPoint)panTransition;
+- (void)setTransform3DWithPanTranslation:(CGPoint)panTranslation;
 
 
 
