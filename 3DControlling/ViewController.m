@@ -24,6 +24,7 @@
     [self.view addSubview:self.transformView];
     
     [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onPanGesture:)]];
+    [self.transformView addGestureRecognizer:[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(onPinchGesture:)]];
 }
 
 #pragma mark - callback
@@ -39,6 +40,18 @@
         
     }
 }
+
+- (void)onPinchGesture:(UIPinchGestureRecognizer *)gesture
+{
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        
+    } else if (gesture.state == UIGestureRecognizerStateChanged) {
+        self.transformView.layer.transform = CATransform3DScale(self.transformView.layer.transform, gesture.scale, gesture.scale, 1);
+    } else if (gesture.state == UIGestureRecognizerStateEnded || gesture.state == UIGestureRecognizerStateCancelled) {
+        
+    }
+}
+
 #pragma mark - getter
 
 - (UIView *)transformView

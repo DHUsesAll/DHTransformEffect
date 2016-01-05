@@ -15,8 +15,8 @@
 		E515609E1BCFCD2600576EDF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E515609D1BCFCD2600576EDF /* Images.xcassets */; };
 		E51560A11BCFCD2600576EDF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E515609F1BCFCD2600576EDF /* LaunchScreen.xib */; };
 		E51560AD1BCFCD2600576EDF /* _DControllingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E51560AC1BCFCD2600576EDF /* _DControllingTests.m */; };
-		E51560B91BCFD34500576EDF /* DHVector.m in Sources */ = {isa = PBXBuildFile; fileRef = E51560B81BCFD34500576EDF /* DHVector.m */; };
 		E51560BB1BCFED3700576EDF /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E51560BA1BCFED3700576EDF /* 1.jpg */; };
+		E53BB0E41C3B653F00E204B9 /* DHVector.m in Sources */ = {isa = PBXBuildFile; fileRef = E53BB0E31C3B653F00E204B9 /* DHVector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,9 +45,9 @@
 		E51560A61BCFCD2600576EDF /* 3DControllingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3DControllingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51560AB1BCFCD2600576EDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E51560AC1BCFCD2600576EDF /* _DControllingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _DControllingTests.m; sourceTree = "<group>"; };
-		E51560B71BCFD34500576EDF /* DHVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHVector.h; sourceTree = "<group>"; };
-		E51560B81BCFD34500576EDF /* DHVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHVector.m; sourceTree = "<group>"; };
 		E51560BA1BCFED3700576EDF /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.jpg; path = DHVector/1.jpg; sourceTree = "<group>"; };
+		E53BB0E21C3B653F00E204B9 /* DHVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHVector.h; sourceTree = "<group>"; };
+		E53BB0E31C3B653F00E204B9 /* DHVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHVector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +142,8 @@
 		E51560B61BCFD34500576EDF /* DHVector */ = {
 			isa = PBXGroup;
 			children = (
-				E51560B71BCFD34500576EDF /* DHVector.h */,
-				E51560B81BCFD34500576EDF /* DHVector.m */,
+				E53BB0E21C3B653F00E204B9 /* DHVector.h */,
+				E53BB0E31C3B653F00E204B9 /* DHVector.m */,
 			);
 			path = DHVector;
 			sourceTree = "<group>";
@@ -250,8 +250,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E50DB7081BD4D718008D80FF /* UIView+DHTransform3D.m in Sources */,
-				E51560B91BCFD34500576EDF /* DHVector.m in Sources */,
 				E51560991BCFCD2600576EDF /* ViewController.m in Sources */,
+				E53BB0E41C3B653F00E204B9 /* DHVector.m in Sources */,
 				E51560961BCFCD2600576EDF /* AppDelegate.m in Sources */,
 				E51560931BCFCD2600576EDF /* main.m in Sources */,
 			);

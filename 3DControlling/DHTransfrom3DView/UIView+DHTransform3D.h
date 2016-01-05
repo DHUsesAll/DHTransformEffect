@@ -25,6 +25,22 @@
  */
 - (void)setTransform3DWithPanTranslation:(CGPoint)panTranslation;
 
+/**
+ *  使用缩放手势的scale属性来控制视图的缩放
+ *
+ *  @param pinchScale pinch手势的scale属性
+ */
 
+// coming soon
+//- (void)zoomWithPinchScale:(CGFloat)pinchScale;
+
+
+/**
+ *  围绕Z轴旋转
+ *
+ *  @param radian 旋转的弧度
+ */
+// coming soon
+//- (void)rotateByZWithRadian:(CGFloat)radian;
 
 @end

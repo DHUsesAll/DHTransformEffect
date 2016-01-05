@@ -14,7 +14,7 @@ static const CGFloat maxTranslate_ = 400.f;
 
 static const CGFloat maxRotateRadian_   =   M_PI * 2;
 
-static const void * lastTransitionKey = &lastTransitionKey;
+static const void * lastTranslationKey = &lastTranslationKey;
 static const void * transformUnitKey = &transformUnitKey;
 
 @implementation UIView (DHTransform3D)
@@ -22,14 +22,14 @@ static const void * transformUnitKey = &transformUnitKey;
 // 使用OC的动态特性添加属性
 @dynamic transformUnit;
 
-- (DHVector *)lastTransition
+- (DHVector *)lastTranslation
 {
-    return objc_getAssociatedObject(self, lastTransitionKey);
+    return objc_getAssociatedObject(self, lastTranslationKey);
 }
 
-- (void)setLastTransition:(DHVector *)lastTransition
+- (void)setLastTranslation:(DHVector *)lastTranslation
 {
-    objc_setAssociatedObject(self, lastTransitionKey, lastTransition, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, lastTranslationKey, lastTranslation, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (CGFloat)transformUnit
@@ -45,6 +45,7 @@ static const void * transformUnitKey = &transformUnitKey;
 - (void)prepareForTransform3D
 {
     CATransform3D transform = self.layer.transform;
+    // 设置旋转透视效果
     transform.m34 = -1.f/700;
     
     self.layer.transform = transform;
@@ -54,17 +55,15 @@ static const void * transformUnitKey = &transformUnitKey;
 {
     // 我们要的向量是手指上次所在的点到这次所在的点连成的一个向量，这是你这次手指滑动的方向，传给transform3DRotate函数的向量是垂直于这个向量的向量。而我们已知的只有这个transition，也就是手指最开始的点到手指当前点连成的一个向量（也就是手指的位移，只考虑起始点和结束点）。
     // 画出图来就发现，我们要的向量就是当前向量-上一次手指的位移向量（向量减法）
-    // 因为UIKit的坐标系正方向向下，我们向量计算的坐标系正方向向上，所以要做一次简单的转换，转换到坐标系正方向向上
-    panTranslation.y = -panTranslation.y;
     
     // 通过这个位移生成一个向量。
     DHVector * vector = [[DHVector alloc] initWithCoordinateExpression:panTranslation];
     
     // 用当前的位移向量-上次的位移向量得到我们手指的位移偏移量
-    DHVector * translateVector = [DHVector aVector:vector substractedByOtherVector:[self lastTransition]];
+    DHVector * translateVector = [DHVector aVector:vector substractedByOtherVector:[self lastTranslation]];
     
     // 把这个向量保存起来，下次调用这个方法的时候需要拿到这次的向量，用来做减法
-    [self setLastTransition:vector];
+    [self setLastTranslation:vector];
     
     // 随便计算一下单位旋转角度，也就是每次调用这个方法的时候应该旋转多少度
     
@@ -76,9 +75,20 @@ static const void * transformUnitKey = &transformUnitKey;
     // 把起始点平移至原点，这样就是向量的坐标形式
     [rotateVector translationToPoint:CGPointZero];
     
-    // 把旋转向量传给函数，注意y方向要从向量坐标系转换回UIKit坐标系，所以取了负号
-    self.layer.transform = CATransform3DRotate(self.layer.transform, radian, rotateVector.endPoint.x, - rotateVector.endPoint.y, 0);
+    // 把旋转向量传给函数
+    self.layer.transform = CATransform3DRotate(self.layer.transform, radian, rotateVector.endPoint.x,  rotateVector.endPoint.y, 0);
 
+}
+
+- (void)zoomWithPinchScale:(CGFloat)pinchScale
+{
+    
+}
+
+
+- (void)rotateByZWithRadian:(CGFloat)radian
+{
+    
 }
 
 @end
